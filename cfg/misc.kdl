@@ -1,0 +1,36 @@
+    prefer-no-csd // PEDE aos apps que NÃO desenhem a própria barra de título (usa a decoração do compositor; visual mais limpo)
+    screenshot-path null // PASTA onde salvar screenshots (null = pasta padrão de imagens do sistema)
+
+    environment {
+        ELECTRON_OZONE_PLATFORM_HINT "auto" // Faz apps ELECTRON (VS Code, Discord...) usarem Wayland nativo quando possível
+        QT_QPA_PLATFORM "wayland" // Força apps QT (Qt Creator, qBittorrent...) a rodarem em Wayland em vez de XWayland
+        QT_QPA_PLATFORMTHEME "gtk3" // Faz apps QT usarem o TEMA GTK (aparência consistente com o resto)
+        QT_WAYLAND_DISABLE_WINDOWDECORATION "1" // REMOVE a barra de título dos apps QT no Wayland (sem duplicar decoração)
+        XDG_CURRENT_DESKTOP "niri" // Informa aos apps que o ambiente é o NIRI (portais, temas e integrações usam isso)
+        XDG_SESSION_TYPE "wayland" // Informa aos apps que a sessão é WAYLAND (alguns mudam comportamento por isso)
+    }
+
+    cursor {
+        xcursor-theme "capitaine-cursors" // TEMA do cursor do mouse
+        xcursor-size 24 // TAMANHO do cursor em pixels
+    }
+
+    blur {
+        passes 2        // more passes = stronger blur (default: 3)
+        // ↑ NÚMERO de passadas do desfoque (mais passadas = blur mais forte; padrão: 3)
+        offset 3.0      // sample distance per pass (default: 3.0)
+        // ↑ DISTÂNCIA de amostragem por passada (controla o alcance/suavidade do blur; padrão: 3.0)
+        noise 0.03      // grain overlay (default: 0.02)
+        // ↑ GRÃO/ruído sobre o blur (textura sutil p/ evitar faixas de cor; padrão: 0.02)
+        saturation 1.0  // color saturation boost (default: 1.5)
+        // ↑ SATURAÇÃO das cores no blur (1.0 = normal; padrão: 1.5 mais vibrante)
+    }
+
+    debug {
+        // Allows notification actions and window activation from Noctalia.
+        honor-xdg-activation-with-invalid-serial // PERMITE ao Noctalia ativar janelas e usar ações de notificação mesmo sem token válido (integração shell <-> apps)
+    }
+
+    hotkey-overlay {
+       skip-at-startup // NÃO mostra o painel de atalhos ao iniciar a sessão (só abre com Super+Shift+Esc)
+    }

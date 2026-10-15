@@ -1,0 +1,231 @@
+binds {
+
+    // ────────────── Keybindings ──────────────
+    // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+    // ↑ BLOCO de todos os atalhos de teclado. "Mod" = Super (tecla Windows), salvo outra config.
+
+    // ─── noctalia-shell keybinds ───
+    // https://docs.noctalia.dev/getting-started/keybinds/
+    // ↑ Atalhos que controlam o SHELL Noctalia (interface: barra, painéis, lançador...).
+
+    Mod+Shift+ESCAPE                     { show-hotkey-overlay; } // MOSTRA o painel com todos os atalhos na tela
+
+    // ─── Applications ───
+    // ↑ Atalhos que ABREM programas.
+    Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; } // ABRE o terminal Alacritty
+    Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; } // ABRE o navegador Firefox
+
+    // --- Noctalia ---
+    // ↑ Atalhos dos painéis do Noctalia.
+    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; } // ABRE/FECHA o seletor de papel de parede
+    Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; } // ABRE/FECHA a central de controle (volume, rede, brilho...)
+    Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; } // ABRE/FECHA as configurações do Noctalia
+    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
+    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; } // BLOQUEIA a tela
+    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; } // ABRE/FECHA o menu de sessão (desligar, sair, reiniciar...)
+
+    // Please set the text editor of your choice.
+    // Mod+Shift+E                               hotkey-overlay-title="Open Text Editor: Zed" { spawn "zed"; }
+    // ↑ (comentado) Exemplo de atalho p/ editor de texto Zed — ATIVAR removendo "//" e ajustando o app.
+    Mod+Shift+E                           hotkey-overlay-title="Edit Niri Config: code ~/.config/niri" { spawn "code" "/home/val/.config/niri"; } // ABRE a pasta de config do niri no VS Code
+
+    // Please choose your own file manager.
+    Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; } // ABRE o gerenciador de arquivos Nautilus
+
+    // ─── Media Controls ───
+    // ↑ Teclas MULTIMÍDIA do teclado (volume, microfone, reprodução). "allow-when-locked" = funcionam mesmo com a tela bloqueada.
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-up"; } // AUMENTA o volume
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-down"; } // DIMINUI o volume
+    XF86AudioMute                       allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; } // MUTA/DESMUTA o som
+    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; } // MUTA/DESMUTA o microfone
+    XF86AudioNext                       allow-when-locked=true { spawn-sh "noctalia msg media next"; } // PRÓXIMA faixa de música/vídeo
+    XF86AudioPrev                       allow-when-locked=true { spawn-sh "noctalia msg media previous"; } // FAIXA ANTERIOR
+    XF86AudioPlay                       allow-when-locked=true { spawn-sh "noctalia msg media play"; } // TOCA/PÂUSA a mídia
+    XF86AudioPause                       allow-when-locked=true { spawn-sh "noctalia msg media stop"; } // PARA a mídia
+
+    // ─── Brightness Controls ───
+    // ↑ Teclas de BRILHO do teclado. Também funcionam com a tela bloqueada.
+    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; } // AUMENTA o brilho da tela
+    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; } // DIMINUI o brilho da tela
+
+    // ─── Window Movement and Focus ───
+    // ↑ NAVEGAÇÃO entre janelas e colunas. Setas e HJKL fazem o mesmo (estilo Vim).
+    Mod+Q                               { close-window; } // FECHA a janela focada
+
+    Mod+Left                            { focus-column-left; } // FOCA a coluna à esquerda (seta)
+    Mod+H                               { focus-column-left; } // FOCA a coluna à esquerda (H = Vim)
+    Mod+Right                           { focus-column-right; } // FOCA a coluna à direita (seta)
+    Mod+L                               { focus-column-right; } // FOCA a coluna à direita (L = Vim)
+    Mod+Up                              { focus-window-up; } // FOCA a janela de cima (seta)
+    Mod+K                               { focus-window-up; } // FOCA a janela de cima (K = Vim)
+    Mod+Down                            { focus-window-down; } // FOCA a janela de baixo (seta)
+    Mod+J                               { focus-window-down; } // FOCA a janela de baixo (J = Vim)
+
+    Mod+CTRL+Left                       { move-column-left; } // MOVE a coluna focada para a esquerda (seta)
+    Mod+CTRL+H                          { move-column-left; } // MOVE a coluna focada para a esquerda (H = Vim)
+    Mod+CTRL+Right                      { move-column-right; } // MOVE a coluna focada para a direita (seta)
+    Mod+CTRL+L                          { move-column-right; } // MOVE a coluna focada para a direita (L = Vim)
+    Mod+CTRL+UP                         { move-window-up; } // MOVE a janela para cima (seta)
+    Mod+CTRL+K                          { move-window-up; } // MOVE a janela para cima (K = Vim)
+    Mod+CTRL+Down                       { move-window-down; } // MOVE a janela para baixo (seta)
+    Mod+CTRL+J                          { move-window-down; } // MOVE a janela para baixo (J = Vim)
+
+    Mod+Home                            { focus-column-first; } // FOCA a PRIMEIRA coluna (mais à esquerda)
+    Mod+End                             { focus-column-last; } // FOCA a ÚLTIMA coluna (mais à direita)
+    Mod+CTRL+Home                       { move-column-to-first; } // MOVE a coluna para a PRIMEIRA posição
+    Mod+CTRL+End                        { move-column-to-last; } // MOVE a coluna para a ÚLTIMA posição
+
+    Mod+Shift+Left                      { focus-monitor-left; } // FOCA o monitor à esquerda
+    Mod+Shift+Right                     { focus-monitor-right; } // FOCA o monitor à direita
+    Mod+Shift+UP                        { focus-monitor-up; } // FOCA o monitor de cima
+    Mod+Shift+Down                      { focus-monitor-down; } // FOCA o monitor de baixo
+
+    Mod+Shift+CTRL+Left                 { move-column-to-monitor-left; } // MANDA a coluna para o monitor à esquerda
+    Mod+Shift+CTRL+Right                { move-column-to-monitor-right; } // MANDA a coluna para o monitor à direita
+    Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; } // MANDA a coluna para o monitor de cima
+    Mod+Shift+CTRL+Down                 { move-column-to-monitor-down; } // MANDA a coluna para o monitor de baixo
+    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; } // ALTERN o foco entre janelas flutuantes e do mosaico
+
+    Mod+BracketLeft                     { consume-or-expel-window-left; } // JUNTA/SEPARA a janela com a coluna da esquerda ([ = colchete esquerdo)
+    Mod+BracketRight                    { consume-or-expel-window-right; } // JUNTA/SEPARA a janela com a coluna da direita (] = colchete direito)
+
+    Mod+Comma                           { consume-window-into-column; } // PUXA a janela para DENTRO da coluna vizinha (vira aba/empilhada)
+    Mod+Period                          { expel-window-from-column; } // EXPULSA a janela da coluna (vira coluna própria)
+
+    Mod+R                               { switch-preset-column-width; } // ALTERN entre as larguras pré-definidas da coluna (1/3 → 1/2 → 2/3)
+    Mod+Shift+R                         { switch-preset-column-width-back; } // VOLTA uma largura pré-definida (ordem inversa)
+
+    Mod+Ctrl+Shift+R                    { switch-preset-window-height; } // ALTERN entre as alturas pré-definidas da janela
+    Mod+Ctrl+R                          { reset-window-height; } // RESTAURA a altura automática da janela
+
+
+    // ─── Workspace Switching ───
+    // ↑ TROCA de workspaces (áreas de trabalho) com o scroll do mouse ou números.
+    Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; } // VAI ao workspace de baixo rolando o mouse (150ms anti-repique)
+    Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; } // VAI ao workspace de cima rolando o mouse
+    Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; } // MANDA a coluna ao workspace de baixo rolando o mouse
+    Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; } // MANDA a coluna ao workspace de cima rolando o mouse
+
+    Mod+WheelScrollRight                { focus-column-right; } // FOCA a coluna da direita com scroll lateral p/ direita
+    Mod+WheelScrollLeft                 { focus-column-left; } // FOCA a coluna da esquerda com scroll lateral p/ esquerda
+    Mod+CTRL+WheelScrollRight           { move-column-right; } // MOVE a coluna p/ direita com scroll lateral p/ direita
+    Mod+CTRL+WheelScrollLeft            { move-column-left; } // MOVE a coluna p/ esquerda com scroll lateral p/ esquerda
+
+    Mod+Shift+WheelScrollDown           { focus-column-right; } // FOCA a coluna da direita (scroll vertical com Shift)
+    Mod+Shift+WheelScrollUp             { focus-column-left; } // FOCA a coluna da esquerda (scroll vertical com Shift)
+    Mod+CTRL+Shift+WheelScrollDown      { move-column-right; } // MOVE a coluna p/ direita (scroll vertical com Ctrl+Shift)
+    Mod+CTRL+Shift+WheelScrollUp        { move-column-left; } // MOVE a coluna p/ esquerda (scroll vertical com Ctrl+Shift)
+
+    // Fileira numérica superior
+    // ↑ VAI direto ao workspace N (1 a 9) pela fileira de números acima das letras.
+    Mod+1                               { focus-workspace 1; } // VAI ao workspace 1
+    Mod+2                               { focus-workspace 2; } // VAI ao workspace 2
+    Mod+3                               { focus-workspace 3; } // VAI ao workspace 3
+    Mod+4                               { focus-workspace 4; } // VAI ao workspace 4
+    Mod+5                               { focus-workspace 5; } // VAI ao workspace 5
+    Mod+6                               { focus-workspace 6; } // VAI ao workspace 6
+    Mod+7                               { focus-workspace 7; } // VAI ao workspace 7
+    Mod+8                               { focus-workspace 8; } // VAI ao workspace 8
+    Mod+9                               { focus-workspace 9; } // VAI ao workspace 9
+
+    // Numérico do teclado (numpad, à direita) - com NumLock LIGADO
+    // ↑ Mesma função acima, mas pelas teclas do TECLADO NUMÉRICO (só valem com NumLock ligado).
+    Mod+KP_1                            { focus-workspace 1; } // VAI ao workspace 1 (numpad)
+    Mod+KP_2                            { focus-workspace 2; } // VAI ao workspace 2 (numpad)
+    Mod+KP_3                            { focus-workspace 3; } // VAI ao workspace 3 (numpad)
+    Mod+KP_4                            { focus-workspace 4; } // VAI ao workspace 4 (numpad)
+    Mod+KP_5                            { focus-workspace 5; } // VAI ao workspace 5 (numpad)
+    Mod+KP_6                            { focus-workspace 6; } // VAI ao workspace 6 (numpad)
+    Mod+KP_7                            { focus-workspace 7; } // VAI ao workspace 7 (numpad)
+    Mod+KP_8                            { focus-workspace 8; } // VAI ao workspace 8 (numpad)
+    Mod+KP_9                            { focus-workspace 9; } // VAI ao workspace 9 (numpad)
+
+    // Numérico do teclado - com NumLock DESLIGADO (mesmas teclas físicas, outro keysym)
+    // ↑ Com NumLock desligado o numpad manda End/Down/Next... em vez de 1/2/3...; estes binds cobrem esse caso.
+    // Numpad 1=End 2=Down 3=Next 4=Left 5=Begin 6=Right 7=Home 8=Up 9=Prior
+    Mod+KP_End                          { focus-workspace 1; } // VAI ao workspace 1 (numpad sem NumLock)
+    Mod+KP_Down                         { focus-workspace 2; } // VAI ao workspace 2 (numpad sem NumLock)
+    Mod+KP_Next                         { focus-workspace 3; } // VAI ao workspace 3 (numpad sem NumLock)
+    Mod+KP_Left                         { focus-workspace 4; } // VAI ao workspace 4 (numpad sem NumLock)
+    Mod+KP_Begin                        { focus-workspace 5; } // VAI ao workspace 5 (numpad sem NumLock)
+    Mod+KP_Right                        { focus-workspace 6; } // VAI ao workspace 6 (numpad sem NumLock)
+    Mod+KP_Home                         { focus-workspace 7; } // VAI ao workspace 7 (numpad sem NumLock)
+    Mod+KP_Up                           { focus-workspace 8; } // VAI ao workspace 8 (numpad sem NumLock)
+    Mod+KP_Prior                        { focus-workspace 9; } // VAI ao workspace 9 (numpad sem NumLock)
+
+    // MANDA a coluna focada para o workspace N (fileira superior).
+    Mod+CTRL+1                          { move-column-to-workspace 1; } // MANDA a coluna ao workspace 1
+    Mod+CTRL+2                          { move-column-to-workspace 2; } // MANDA a coluna ao workspace 2
+    Mod+CTRL+3                          { move-column-to-workspace 3; } // MANDA a coluna ao workspace 3
+    Mod+CTRL+4                          { move-column-to-workspace 4; } // MANDA a coluna ao workspace 4
+    Mod+CTRL+5                          { move-column-to-workspace 5; } // MANDA a coluna ao workspace 5
+    Mod+CTRL+6                          { move-column-to-workspace 6; } // MANDA a coluna ao workspace 6
+    Mod+CTRL+7                          { move-column-to-workspace 7; } // MANDA a coluna ao workspace 7
+    Mod+CTRL+8                          { move-column-to-workspace 8; } // MANDA a coluna ao workspace 8
+    Mod+CTRL+9                          { move-column-to-workspace 9; } // MANDA a coluna ao workspace 9
+
+    // Mover coluna para workspace pelo numpad - com NumLock LIGADO
+    // ↑ Mesma função acima, pelo teclado numérico (com NumLock ligado).
+    Mod+CTRL+KP_1                       { move-column-to-workspace 1; } // MANDA a coluna ao workspace 1 (numpad)
+    Mod+CTRL+KP_2                       { move-column-to-workspace 2; } // MANDA a coluna ao workspace 2 (numpad)
+    Mod+CTRL+KP_3                       { move-column-to-workspace 3; } // MANDA a coluna ao workspace 3 (numpad)
+    Mod+CTRL+KP_4                       { move-column-to-workspace 4; } // MANDA a coluna ao workspace 4 (numpad)
+    Mod+CTRL+KP_5                       { move-column-to-workspace 5; } // MANDA a coluna ao workspace 5 (numpad)
+    Mod+CTRL+KP_6                       { move-column-to-workspace 6; } // MANDA a coluna ao workspace 6 (numpad)
+    Mod+CTRL+KP_7                       { move-column-to-workspace 7; } // MANDA a coluna ao workspace 7 (numpad)
+    Mod+CTRL+KP_8                       { move-column-to-workspace 8; } // MANDA a coluna ao workspace 8 (numpad)
+    Mod+CTRL+KP_9                       { move-column-to-workspace 9; } // MANDA a coluna ao workspace 9 (numpad)
+
+    // Mover coluna para workspace pelo numpad - com NumLock DESLIGADO
+    // ↑ Mesma função acima, pelo numpad com NumLock desligado.
+    Mod+CTRL+KP_End                     { move-column-to-workspace 1; } // MANDA a coluna ao workspace 1 (numpad sem NumLock)
+    Mod+CTRL+KP_Down                    { move-column-to-workspace 2; } // MANDA a coluna ao workspace 2 (numpad sem NumLock)
+    Mod+CTRL+KP_Next                    { move-column-to-workspace 3; } // MANDA a coluna ao workspace 3 (numpad sem NumLock)
+    Mod+CTRL+KP_Left                    { move-column-to-workspace 4; } // MANDA a coluna ao workspace 4 (numpad sem NumLock)
+    Mod+CTRL+KP_Begin                   { move-column-to-workspace 5; } // MANDA a coluna ao workspace 5 (numpad sem NumLock)
+    Mod+CTRL+KP_Right                   { move-column-to-workspace 6; } // MANDA a coluna ao workspace 6 (numpad sem NumLock)
+    Mod+CTRL+KP_Home                    { move-column-to-workspace 7; } // MANDA a coluna ao workspace 7 (numpad sem NumLock)
+    Mod+CTRL+KP_Up                      { move-column-to-workspace 8; } // MANDA a coluna ao workspace 8 (numpad sem NumLock)
+    Mod+CTRL+KP_Prior                   { move-column-to-workspace 9; } // MANDA a coluna ao workspace 9 (numpad sem NumLock)
+
+    Mod+TAB                             { focus-workspace-previous; } // VOLTA ao workspace anterior (alterna entre os dois últimos)
+
+    // ─── Layout Controls ───
+    // ↑ Controles de TAMANHO e posição das colunas/janelas.
+    Mod+CTRL+F                          { expand-column-to-available-width; } // EXPANDE a coluna para toda a largura livre
+    Mod+C                               { center-column; } // CENTRALIZA a coluna focada na tela
+    Mod+CTRL+C                          { center-visible-columns; } // CENTRALIZA o conjunto de colunas visíveis
+    Mod+Minus                           { set-column-width "-10%"; } // ESTREITA a coluna em 10% (- = menos)
+    Mod+Equal                           { set-column-width "+10%"; } // ALARGA a coluna em 10% (= = mais)
+    Mod+Shift+Minus                     { set-window-height "-10%"; } // ACHATA a janela em 10% de altura
+    Mod+Shift+Equal                     { set-window-height "+10%"; } // ESTICA a janela em 10% de altura
+
+
+    // ─── Modes ───
+    // ↑ MODOS de exibição da janela/coluna.
+    Mod+T                               { toggle-window-floating; } // ALTERN entre flutuante e presa ao mosaico
+    Mod+F                               { maximize-column; } // MAXIMIZA a coluna (ocupa a tela toda, sem ser fullscreen real)
+    Mod+Shift+F                         { fullscreen-window; } // TELA CHEIA de verdade na janela
+    Mod+W                               { toggle-column-tabbed-display; } // ALTERN a coluna entre lado a lado e modo ABAS
+    Mod+M                               { maximize-window-to-edges; } // ESTICA a janela até as bordas disponíveis
+
+    // ─── Screenshots ───
+    // ↑ Capturas de tela (estilo macOS: Ctrl+Shift+1/2/3).
+    CTRL+Shift+1                        { screenshot; } // CAPTURA com seleção de área (abre a mira de seleção)
+    CTRL+Shift+2                        { screenshot-screen; } // CAPTURA a tela inteira
+    CTRL+Shift+3                        { screenshot-window; } // CAPTURA só a janela focada
+
+    // ─── Emergency Escape Key ───
+    // Use this when a fullscreen app blocks your keybinds.
+    // It disables any active keyboard shortcut inhibitor, restoring control.
+    // ↑ SAÍDA DE EMERGÊNCIA: se um app em fullscreen sequestrar seus atalhos, este os reativa.
+    Mod+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; } // LIGA/DESLIGA o bloqueio de atalhos (este atalho nunca pode ser bloqueado)
+
+    // ─── Exit / Power ───
+    // ↑ SAIR e energia.
+    CTRL+ALT+Delete                     { quit; } // Also quits Niri
+    // ↑ ENCERRA a sessão do niri (sai do ambiente)
+    Mod+Shift+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
+    // ↑ DESLIGA os monitores (economia/privacidade; mexe o mouse p/ religar)
+    Mod+O                               repeat=false { toggle-overview; } // ABRE/FECHA a visão geral de workspaces (repeat=false = não repete se segurar a tecla)
+}

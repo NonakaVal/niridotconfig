@@ -1,0 +1,29 @@
+// ────────────── Configuração de teclado, mouse e touchpad ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+    keyboard {
+        xkb {
+            //If you want to overwrite your keyboard layout,
+            // uncomment the line below and change the layout accordingly.
+            //layout "us" // Use the American keyboard layout
+            // ↑ Define o LAYOUT do teclado (ex.: "br" para ABNT2). Comentado = usa o padrão do sistema.
+        }
+        numlock // Liga o NumLock automaticamente ao iniciar a sessão (teclado numérico já ativo no login)
+    }
+
+    touchpad {
+        tap // Permite CLICAR tocando no touchpad (tap-to-click), sem precisar apertar o botão físico
+        natural-scroll // ROLAGEM INVERTIDA estilo macOS (arrastar p/ cima desce o conteúdo)
+    }
+
+    mouse {
+        // If you want to disable Mouse Acceleration,
+        // uncomment the lines below.
+        //accel-profile "flat" // DESLIGA a aceleração do mouse (movimento 1:1, preferido em jogos)
+        //accel-speed 0.0 // VELOCIDADE base do mouse (só faz sentido junto com o perfil acima)
+    }
+
+    focus-follows-mouse // FOCA a janela só de passar o mouse sobre ela (sem precisar clicar)
+    workspace-auto-back-and-forth // VOLTA ao workspace anterior ao chamar o atual de novo (ex.: Super+1, Super+1 alterna entre os dois últimos)
+}

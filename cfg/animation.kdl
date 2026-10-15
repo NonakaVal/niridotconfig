@@ -1,0 +1,47 @@
+// ────────────── Animações do niri ──────────────
+// Define COMO cada transição visual se comporta (velocidade, suavidade, estilo).
+// Há dois estilos: "spring" (física de mola: damping-ratio=amortecimento,
+// stiffness=rigidez, epsilon=precisão de parada) e tempo fixo
+// (duration-ms + curve=curva de aceleração).
+
+    animations {
+        // Animação ao TROCAR de workspace (troca de área de trabalho).
+        workspace-switch {
+            spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        }
+        // Animação ao ABRIR uma janela (200ms com desaceleração suave no fim).
+        window-open {
+            duration-ms 200
+            curve "ease-out-quad"
+        }
+        // Animação ao FECHAR uma janela (200ms com desaceleração suave no fim).
+        window-close {
+            duration-ms 200
+            curve "ease-out-cubic"
+        }
+        // Animação da ROLAGEM horizontal da visão (ao navegar entre colunas/workspaces).
+        horizontal-view-movement {
+            spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
+        }
+        // Animação ao MOVER uma janela de lugar (arrastar entre colunas).
+        window-movement {
+            spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+        }
+        // Animação ao REDIMENSIONAR uma janela (mudar largura/altura).
+        window-resize {
+            spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+        }
+        // Animação da NOTIFICAÇÃO de "config recarregada" (mola mais solta: damping 0.6 dá um leve quique).
+        config-notification-open-close {
+            spring damping-ratio=0.6 stiffness=1200 epsilon=0.001
+        }
+        // Animação de ABERTURA da interface de screenshot (300ms, desaceleração suave).
+        screenshot-ui-open {
+            duration-ms 300
+            curve "ease-out-quad"
+        }
+        // Animação de ABERTURA/FECHAMENTO do overview (visão geral, Super+O).
+        overview-open-close {
+            spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
+        }
+    }

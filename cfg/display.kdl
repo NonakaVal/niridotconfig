@@ -1,0 +1,10 @@
+// ────────────── Configuração dos monitores ──────────────
+// Descubra o nome exato da sua saída com: `niri msg outputs`
+// Descomente (remova "/-") e edite para valer.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+// Configura a saída HDMI-A-1 (TV LG).
+output "HDMI-A-1" {
+    mode "1920x1080@60.000" // Full HD — Resolução e taxa de atualização: 1920x1080 a 60Hz
+    scale 1.4 // Escala da interface: 1 = tamanho normal (use 2 para HiDPI; < 1 deixa tudo menor)
+}

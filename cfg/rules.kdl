@@ -1,0 +1,52 @@
+    // Regra aplicada a TODAS as janelas.
+    window-rule {
+        geometry-corner-radius 5 // ARREDONDA os cantos das janelas em 5px
+        clip-to-geometry true // RECORTA o conteúdo da janela nos cantos arredondados (sem isso o app "vaza" para fora do arredondado)
+    }
+
+    // Regra aplicada a TODAS as janelas.
+    window-rule {
+        background-effect {
+          blur true // Aplica DESFOQUE no que está atrás das janelas (efeito vidro fosco)
+          xray false // NÃO deixa a janela "transparente a raio-x" (false = o blur respeita o conteúdo; true mostraria através)
+        }
+    }
+
+    // Floating Noctalia settings window.
+    // ↑ Regra só para a janela de CONFIGURAÇÕES do Noctalia.
+    window-rule {
+        match app-id="dev.noctalia.Noctalia" // FILTRO: só vale para o app com este ID (janela de settings do Noctalia)
+        open-floating true // ABRE como janela flutuante (livre, não presa ao mosaico/tiling)
+        default-column-width { fixed 1080; } // LARGURA inicial fixa de 1080px
+        default-window-height { fixed 920; } // ALTURA inicial fixa de 920px
+    }
+
+    // if you use steam you will probably like these
+    // ↑ Regra para as JANELAS AUXILIARES da Steam (amigos, diálogos...). A janela principal NÃO é afetada.
+    window-rule {
+        match app-id="steam" // FILTRO: só vale para o app Steam...
+        exclude title=r#"^[Ss]team$"# // ...EXCETO a janela cujo título é exatamente "Steam"/"steam" (a principal continua no mosaico)
+        open-floating true // Abre as janelinhas auxiliares como FLUTUANTES
+    }
+
+    // Regra para os POPUPS DE NOTIFICAÇÃO da Steam (conquistas etc.).
+    window-rule {
+       match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"# // FILTRO: só as janelas de toast/notificação da Steam (nome interno segue esse padrão)
+       default-floating-position x=10 y=10 relative-to="bottom-right" // POSIÇÃO inicial: 10px da borda, ancorada no CANTO INFERIOR DIREITO
+       open-focused false // ABRE sem roubar o foco (você continua digitando onde estava)
+    }
+
+    // Regra para a camada do PAPEL DE PAREDE do Noctalia.
+    layer-rule {
+        match namespace="^noctalia-wallpaper" // FILTRO: só a camada que desenha o wallpaper
+        place-within-backdrop true // Coloca o wallpaper DENTRO do pano de fundo (atrás de tudo, sem interferir nas janelas)
+    }
+
+    // Regra para as camadas de INTERFACE do Noctalia (barra, notificações, dock, painéis, OSD).
+    layer-rule {
+        match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$" // FILTRO: barra, notificações, dock, painéis e OSD do Noctalia
+        background-effect {
+          xray false // NÃO atravessa essas camadas com raio-x (o blur atrás delas se comporta normal)
+          // blur false // (comentado) Se ativado, DESLIGA o blur atrás dessas camadas
+        }
+    }

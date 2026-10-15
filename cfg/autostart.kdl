@@ -1,0 +1,5 @@
+// ────────────── Programas iniciados com a sessão ──────────────
+// Comandos executados UMA VEZ quando o niri inicia (login).
+
+    // Inicia o Noctalia Shell (barra superior, lançador, central de controle, papéis de parede etc.).
+    spawn-at-startup "noctalia"

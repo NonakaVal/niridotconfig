@@ -1,0 +1,20 @@
+    layout {
+        gaps 16 // ESPAÇAMENTO em pixels entre as janelas lado a lado
+        center-focused-column "never" // NÃO centraliza sozinho a coluna focada ("never" = nunca; evita a tela ficar pulando)
+
+        background-color "transparent" // <- needed for noctalia-shell to set wallpaper
+        // ↑ FUNDO transparente para o Noctalia exibir o papel de parede por trás das janelas
+
+        // Borda que destaca a janela ativa (padrão do niri: width 4)
+        focus-ring {
+            width 2 // ESPESSURA em pixels da borda da janela focada (menor = mais fina; 0 = sem borda)
+        }
+
+        preset-column-widths {
+            proportion 0.33333 // LARGURA pré-definida 1: coluna ocupa 1/3 da tela (alterna com Super+R)
+            proportion 0.5 // LARGURA pré-definida 2: coluna ocupa metade da tela
+            proportion 0.66667 // LARGURA pré-definida 3: coluna ocupa 2/3 da tela
+        }
+
+        struts {} // MARGENS reservadas nas bordas da tela (vazio = nenhuma; usado p/ abrir espaço p/ painéis externos)
+    }
