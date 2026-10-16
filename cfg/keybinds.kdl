@@ -11,6 +11,9 @@ binds {
 
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; } // MOSTRA o painel com todos os atalhos na tela
 
+    Ctrl+Shift+ESCAPE hotkey-overlay-title="Mission Center" { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
+    ALT+Space { spawn "walker"; }
+    
     // ─── Applications ───
     // ↑ Atalhos que ABREM programas.
     Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "konsole"; } // ABRE o terminal Alacritty
@@ -20,8 +23,9 @@ binds {
     // ↑ Atalhos dos painéis do Noctalia. 
     Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; } // ABRE/FECHA o seletor de papel de parede
     Mod+Semicolon                       hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; } // ABRE/FECHA a central de controle (volume, rede, brilho...)
-    Mod+Shift+Semicolon                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; } // ABRE/FECHA as configurações do Noctalia
+    Mod+Shift+Semicolon                 hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; } // ABRE/FECHA as configurações do Noctalia
     Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
+    Mod+A                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; } // BLOQUEIA a tela
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; } // ABRE/FECHA o menu de sessão (desligar, sair, reiniciar...)
 
@@ -37,7 +41,7 @@ binds {
 
     // Please choose your own file manager.
     Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "dolphin"; } // ABRE o gerenciador de arquivos Nautilus
-
+    Ctrl+Mod+E                          hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; } // ABRE o gerenciador de arquivos Nautilus
     // ─── Media Controls ───
     // ↑ Teclas MULTIMÍDIA do teclado (volume, microfone, reprodução). "allow-when-locked" = funcionam mesmo com a tela bloqueada.
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-up"; } // AUMENTA o volume
