@@ -8,6 +8,7 @@ binds {
     // https://docs.noctalia.dev/getting-started/keybinds/
     // ↑ Atalhos que controlam o SHELL Noctalia (interface: barra, painéis, lançador...).
 
+
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; } // MOSTRA o painel com todos os atalhos na tela
 
     // ─── Applications ───
@@ -31,6 +32,8 @@ binds {
     Mod+V   hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "vaultkit"; }
     Mod+Alt+N  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mousepad"; }
+    Ctrl+Space hotkey-overlay-title="Open Chrome App" {spawn "gtk-launch" "chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default";
+}
 
     // Please choose your own file manager.
     Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "dolphin"; } // ABRE o gerenciador de arquivos Nautilus

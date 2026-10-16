@@ -1,5 +1,5 @@
     layout {
-        gaps 16 // ESPAÇAMENTO em pixels entre as janelas lado a lado
+        gaps 6 // ESPAÇAMENTO em pixels entre as janelas lado a lado
         center-focused-column "never" // NÃO centraliza sozinho a coluna focada ("never" = nunca; evita a tela ficar pulando)
 
         background-color "transparent" // <- needed for noctalia-shell to set wallpaper
@@ -7,7 +7,7 @@
 
         // Borda que destaca a janela ativa (padrão do niri: width 4)
         focus-ring {
-            width 2 // ESPESSURA em pixels da borda da janela focada (menor = mais fina; 0 = sem borda)
+            width 4 // ESPESSURA em pixels da borda da janela focada (menor = mais fina; 0 = sem borda)
         }
 
         preset-column-widths {
