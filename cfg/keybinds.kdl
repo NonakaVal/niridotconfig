@@ -50,8 +50,9 @@ binds {
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; } // MUTA/DESMUTA o microfone
     XF86AudioNext                       allow-when-locked=true { spawn-sh "noctalia msg media next"; } // PRÓXIMA faixa de música/vídeo
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "noctalia msg media previous"; } // FAIXA ANTERIOR
-    XF86AudioPlay                       allow-when-locked=true { spawn-sh "noctalia msg media play"; } // TOCA/PÂUSA a mídia
-    XF86AudioPause                       allow-when-locked=true { spawn-sh "noctalia msg media stop"; } // PARA a mídia
+    XF86AudioPlay                       allow-when-locked=true { spawn-sh "noctalia msg media toggle"; } // TOCA/PÂUSA a mídia (Fn+F7 no MK270)
+    XF86AudioPause                      allow-when-locked=true { spawn-sh "noctalia msg media pause"; } // PAUSA a mídia (sem encerrar a reprodução)
+    XF86AudioStop                       allow-when-locked=true { spawn-sh "noctalia msg media stop"; } // PARA a mídia por completo
 
     // ─── Brightness Controls ───
     // ↑ Teclas de BRILHO do teclado. Também funcionam com a tela bloqueada.

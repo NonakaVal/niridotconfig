@@ -1,2 +1,0 @@
-// Copie esta linha para dentro do bloco binds { } do config.kdl:
-Mod+Space { spawn "walker"; }
