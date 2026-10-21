@@ -28,13 +28,15 @@ binds {
     Mod+A                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; } // BLOQUEIA a tela
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; } // ABRE/FECHA o menu de sessão (desligar, sair, reiniciar...)
+    Mod+Shift+U                         hotkey-overlay-title="Switch User: SDDM greeter" { spawn-sh "gdbus call --system --dest org.freedesktop.DisplayManager --object-path /org/freedesktop/DisplayManager/Seat0 --method org.freedesktop.DisplayManager.Seat.SwitchToGreeter"; } // TROCA de usuário: abre o SDDM em outro VT sem fechar esta sessão (mesmo método do KDE)
 
     // Please set the text editor of your choice.
     // Mod+Shift+E                               hotkey-overlay-title="Open Text Editor: Zed" { spawn "zed"; }
     // ↑ (comentado) Exemplo de atalho p/ editor de texto Zed — ATIVAR removendo "//" e ajustando o app.
     Mod+Alt+Semicolon   hotkey-overlay-title="Edit Niri Config: code ~/.config/niri" { spawn "code" "/home/val/.config/niri"; }
     Mod+V   hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
-    Mod+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "vaultkit"; }
+    Mod+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mdsnip"; }
+    Mod+Shift+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mdsnip search"; }
     Mod+Alt+N  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mousepad"; }
     Ctrl+Space hotkey-overlay-title="Open Chrome App" {spawn "gtk-launch" "chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default";
 }
