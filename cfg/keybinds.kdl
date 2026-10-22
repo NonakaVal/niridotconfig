@@ -11,6 +11,7 @@ binds {
 
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; } // MOSTRA o painel com todos os atalhos na tela
 
+    Mod+Period { spawn "flatpak" "run" "it.mijorus.smile"; }
     Ctrl+Shift+ESCAPE hotkey-overlay-title="Mission Center" { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
     ALT+Space { spawn "walker"; }
     
@@ -103,8 +104,6 @@ binds {
     Mod+BracketRight                    { consume-or-expel-window-right; } // JUNTA/SEPARA a janela com a coluna da direita (] = colchete direito)
 
     Mod+Comma                           { consume-window-into-column; } // PUXA a janela para DENTRO da coluna vizinha (vira aba/empilhada)
-    Mod+Period                          { expel-window-from-column; } // EXPULSA a janela da coluna (vira coluna própria)
-
     Mod+R                               { switch-preset-column-width; } // ALTERN entre as larguras pré-definidas da coluna (1/3 → 1/2 → 2/3)
     Mod+Shift+R                         { switch-preset-column-width-back; } // VOLTA uma largura pré-definida (ordem inversa)
 
