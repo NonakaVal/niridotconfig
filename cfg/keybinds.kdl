@@ -11,7 +11,7 @@ binds {
 
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; } // MOSTRA o painel com todos os atalhos na tela
 
-    Mod+Period { spawn "flatpak" "run" "it.mijorus.smile"; }
+    Mod+Period { spawn-sh "noctalia msg panel-toggle liamwh/emoji-picker:compact"; }
     Ctrl+Shift+ESCAPE hotkey-overlay-title="Mission Center" { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
     ALT+Space { spawn "walker"; }
     
@@ -37,6 +37,7 @@ binds {
     Mod+Alt+Semicolon   hotkey-overlay-title="Edit Niri Config: code ~/.config/niri" { spawn "code" "/home/val/.config/niri"; }
     Mod+V   hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mdsnip"; }
+    Mod+D  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "sendlog"; }
     Mod+Shift+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mdsnip search"; }
     Mod+Alt+N  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "mousepad"; }
     Ctrl+Space hotkey-overlay-title="Open Chrome App" {spawn "gtk-launch" "chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default";

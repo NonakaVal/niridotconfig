@@ -4,3 +4,5 @@
     // Inicia o Noctalia Shell (barra superior, lançador, central de controle, papéis de parede etc.).
     spawn-at-startup "noctalia"
     spawn-at-startup "sh" "-c" "wl-paste --watch cliphist store &"
+    
+    spawn-at-startup "/home/val/AppImages/miyo.appimage"
