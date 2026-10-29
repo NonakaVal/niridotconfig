@@ -239,6 +239,7 @@ binds {
 
     // ─── Exit / Power ───
     // ↑ SAIR e energia.
+    Ctrl+Mod+Alt+Minus                 { spawn "systemctl" "reboot" "--force"; } // REINICIA o sistema à força
     CTRL+ALT+Delete                     { quit; } // Also quits Niri
     // ↑ ENCERRA a sessão do niri (sai do ambiente)
     Mod+Shift+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
