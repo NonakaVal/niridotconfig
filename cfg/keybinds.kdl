@@ -13,6 +13,7 @@ binds {
 
     Mod+Period { spawn-sh "noctalia msg panel-toggle liamwh/emoji-picker:compact"; }
     Mod+Alt+N { spawn-sh "noctalia msg panel-toggle noctalia/notes:panel"; }
+    Mod+Alt+B { spawn-sh "noctalia msg panel-toggle dunarand/bookmarks:panel"; }
 
     Ctrl+Shift+ESCAPE hotkey-overlay-title="Mission Center" { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
     ALT+Space { spawn "walker"; }
