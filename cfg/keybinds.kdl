@@ -8,64 +8,63 @@ binds {
     // https://docs.noctalia.dev/getting-started/keybinds/
     // ↑ Atalhos que controlam o SHELL Noctalia (interface: barra, painéis, lançador...).
 
-
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; } // MOSTRA o painel com todos os atalhos na tela
 
-    Mod+Period { spawn-sh "noctalia msg panel-toggle liamwh/emoji-picker:compact"; }
-    Mod+Alt+N { spawn-sh "noctalia msg panel-toggle noctalia/notes:panel"; }
-    Mod+Alt+B { spawn-sh "noctalia msg panel-toggle dunarand/bookmarks:panel"; }
+    Mod+Period                           { spawn-sh "noctalia msg panel-toggle liamwh/emoji-picker:compact"; }
+    Mod+Alt+N                            { spawn-sh "noctalia msg panel-toggle noctalia/notes:panel"; }
+    Alt+B                            { spawn-sh "noctalia msg panel-toggle dunarand/bookmarks:panel"; }
+    Alt+S                               { spawn-sh "noctalia msg panel-toggle val/mdsnip:panel"; } // ABRE/FECHA o painel do MDSnip
 
     Ctrl+Shift+ESCAPE hotkey-overlay-title="Mission Center" { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
-    ALT+Space { spawn "walker"; }
-    
+    ALT+Space                            { spawn "walker"; }
+
     // ─── Applications ───
     // ↑ Atalhos que ABREM programas.
-    Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "konsole"; } // ABRE o terminal Alacritty
-    Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; } // ABRE o navegador Firefox
-
-    // --- Noctalia ---
-    // ↑ Atalhos dos painéis do Noctalia. 
-    Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; } 
-    
-    Mod+Semicolon                       hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; } // ABRE/FECHA a central de controle (volume, rede, brilho...)
-    Mod+Shift+Semicolon                 hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; } // ABRE/FECHA as configurações do Noctalia
-    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
-    Mod+A                               hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
-    Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; } // BLOQUEIA a tela
-    Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; } // ABRE/FECHA o menu de sessão (desligar, sair, reiniciar...)
-    Mod+Shift+U                         hotkey-overlay-title="Switch User: SDDM greeter" { spawn-sh "gdbus call --system --dest org.freedesktop.DisplayManager --object-path /org/freedesktop/DisplayManager/Seat0 --method org.freedesktop.DisplayManager.Seat.SwitchToGreeter"; } // TROCA de usuário: abre o SDDM em outro VT sem fechar esta sessão (mesmo método do KDE)
-
-    // Please set the text editor of your choice.
-    // Mod+Shift+E                               hotkey-overlay-title="Open Text Editor: Zed" { spawn "zed"; }
-    // ↑ (comentado) Exemplo de atalho p/ editor de texto Zed — ATIVAR removendo "//" e ajustando o app.
-    Mod+Alt+Semicolon   hotkey-overlay-title="Edit Niri Config: code ~/.config/niri" { spawn "code" "/home/val/.config/niri"; }
-    Mod+V   hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
-    Mod+S  hotkey-overlay-title="VaultKit no terminal" { spawn-sh "vaultkit"; }
-    Mod+D  hotkey-overlay-title="Vvaultkit log" { spawn-sh "vaultkit log"; }
-    Mod+Shift+D  hotkey-overlay-title="vaultkit daily" { spawn-sh "vaultkit daily"; }
-    Mod+Shift+S  hotkey-overlay-title="vaultkit search" { spawn-sh "vaultkit search"; }
-    Ctrl+Space hotkey-overlay-title="Open Chrome App" {spawn "gtk-launch" "chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default";
-}
+    Mod+Return                           hotkey-overlay-title="Open Terminal: Alacritty" { spawn "konsole"; } // ABRE o terminal Alacritty
+    Mod+B                                hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; } // ABRE o navegador Firefox
+    Mod+Alt+Semicolon                    hotkey-overlay-title="Edit Niri Config: code ~/.config/niri" { spawn "code" "/home/val/.config/niri"; }
+    Mod+V                                hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    Mod+S                                hotkey-overlay-title="VaultKit no terminal" { spawn-sh "vaultkit"; }
+    Mod+D                                hotkey-overlay-title="Vvaultkit log" { spawn-sh "vaultkit log"; }
+    Mod+Shift+D                          hotkey-overlay-title="vaultkit daily" { spawn-sh "vaultkit daily"; }
+    Mod+Shift+S                          hotkey-overlay-title="vaultkit search" { spawn-sh "vaultkit search"; }
+    Ctrl+Space                           hotkey-overlay-title="Open Chrome App" { spawn "gtk-launch" "chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default"; }
 
     // Please choose your own file manager.
-    Mod+E                               hotkey-overlay-title="File Manager: Nautilus" { spawn "dolphin"; } // ABRE o gerenciador de arquivos Nautilus
-    Ctrl+Mod+E                          hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; } // ABRE o gerenciador de arquivos Nautilus
+    Mod+E                                hotkey-overlay-title="File Manager: Nautilus" { spawn "dolphin"; } // ABRE o gerenciador de arquivos Nautilus
+    Ctrl+Mod+E                           hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; } // ABRE o gerenciador de arquivos Nautilus
+
+    // --- Noctalia ---
+    // ↑ Atalhos dos painéis do Noctalia.
+    Mod+Shift+Return                     hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+Semicolon                        hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; } // ABRE/FECHA a central de controle (volume, rede, brilho...)
+    Mod+Shift+Semicolon                  hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; } // ABRE/FECHA as configurações do Noctalia
+    Mod+CTRL+Return                      hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
+    Mod+A                                hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; } // ABRE/FECHA o lançador de aplicativos
+    Mod+ALT+L                            hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; } // BLOQUEIA a tela
+    Mod+Shift+Q                          hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "noctalia msg panel-toggle session"; } // ABRE/FECHA o menu de sessão (desligar, sair, reiniciar...)
+    Mod+Shift+U                          hotkey-overlay-title="Switch User: SDDM greeter" { spawn-sh "gdbus call --system --dest org.freedesktop.DisplayManager --object-path /org/freedesktop/DisplayManager/Seat0 --method org.freedesktop.DisplayManager.Seat.SwitchToGreeter"; } // TROCA de usuário: abre o SDDM em outro VT sem fechar esta sessão (mesmo método do KDE)
+
+    // Please set the text editor of your choice.
+    // Mod+Shift+E                        hotkey-overlay-title="Open Text Editor: Zed" { spawn "zed"; }
+    // ↑ (comentado) Exemplo de atalho p/ editor de texto Zed — ATIVAR removendo "//" e ajustando o app.
+
     // ─── Media Controls ───
     // ↑ Teclas MULTIMÍDIA do teclado (volume, microfone, reprodução). "allow-when-locked" = funcionam mesmo com a tela bloqueada.
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-up"; } // AUMENTA o volume
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "noctalia msg volume-down"; } // DIMINUI o volume
-    XF86AudioMute                       allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; } // MUTA/DESMUTA o som
-    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; } // MUTA/DESMUTA o microfone
-    XF86AudioNext                       allow-when-locked=true { spawn-sh "noctalia msg media next"; } // PRÓXIMA faixa de música/vídeo
-    XF86AudioPrev                       allow-when-locked=true { spawn-sh "noctalia msg media previous"; } // FAIXA ANTERIOR
-    XF86AudioPlay                       allow-when-locked=true { spawn-sh "noctalia msg media toggle"; } // TOCA/PÂUSA a mídia (Fn+F7 no MK270)
-    XF86AudioPause                      allow-when-locked=true { spawn-sh "noctalia msg media pause"; } // PAUSA a mídia (sem encerrar a reprodução)
-    XF86AudioStop                       allow-when-locked=true { spawn-sh "noctalia msg media stop"; } // PARA a mídia por completo
+    XF86AudioRaiseVolume                 allow-when-locked=true { spawn-sh "noctalia msg volume-up"; } // AUMENTA o volume
+    XF86AudioLowerVolume                 allow-when-locked=true { spawn-sh "noctalia msg volume-down"; } // DIMINUI o volume
+    XF86AudioMute                        allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; } // MUTA/DESMUTA o som
+    XF86AudioMicMute                     allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; } // MUTA/DESMUTA o microfone
+    XF86AudioNext                        allow-when-locked=true { spawn-sh "noctalia msg media next"; } // PRÓXIMA faixa de música/vídeo
+    XF86AudioPrev                        allow-when-locked=true { spawn-sh "noctalia msg media previous"; } // FAIXA ANTERIOR
+    XF86AudioPlay                        allow-when-locked=true { spawn-sh "noctalia msg media toggle"; } // TOCA/PÂUSA a mídia (Fn+F7 no MK270)
+    XF86AudioPause                       allow-when-locked=true { spawn-sh "noctalia msg media pause"; } // PAUSA a mídia (sem encerrar a reprodução)
+    XF86AudioStop                        allow-when-locked=true { spawn-sh "noctalia msg media stop"; } // PARA a mídia por completo
 
     // ─── Brightness Controls ───
     // ↑ Teclas de BRILHO do teclado. Também funcionam com a tela bloqueada.
-    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; } // AUMENTA o brilho da tela
-    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; } // DIMINUI o brilho da tela
+    XF86MonBrightnessUp                  allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; } // AUMENTA o brilho da tela
+    XF86MonBrightnessDown                allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; } // DIMINUI o brilho da tela
 
     // ─── Window Movement and Focus ───
     // ↑ NAVEGAÇÃO entre janelas e colunas. Setas e HJKL fazem o mesmo (estilo Vim).
@@ -115,7 +114,6 @@ binds {
     Mod+Ctrl+Shift+R                    { switch-preset-window-height; } // ALTERN entre as alturas pré-definidas da janela
     Mod+Ctrl+R                          { reset-window-height; } // RESTAURA a altura automática da janela
 
-
     // ─── Workspace Switching ───
     // ↑ TROCA de workspaces (áreas de trabalho) com o scroll do mouse ou números.
     Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; } // VAI ao workspace de baixo rolando o mouse (150ms anti-repique)
@@ -162,13 +160,13 @@ binds {
     // Numpad 1=End 2=Down 3=Next 4=Left 5=Begin 6=Right 7=Home 8=Up 9=Prior
     Mod+KP_End                          { focus-workspace 1; } // VAI ao workspace 1 (numpad sem NumLock)
     Mod+KP_Down                         { focus-workspace 2; } // VAI ao workspace 2 (numpad sem NumLock)
-    Mod+KP_Next                         { focus-workspace 3; } // VAI ao workspace 3 (numpad sem NumLock)
-    Mod+KP_Left                         { focus-workspace 4; } // VAI ao workspace 4 (numpad sem NumLock)
-    Mod+KP_Begin                        { focus-workspace 5; } // VAI ao workspace 5 (numpad sem NumLock)
-    Mod+KP_Right                        { focus-workspace 6; } // VAI ao workspace 6 (numpad sem NumLock)
-    Mod+KP_Home                         { focus-workspace 7; } // VAI ao workspace 7 (numpad sem NumLock)
-    Mod+KP_Up                           { focus-workspace 8; } // VAI ao workspace 8 (numpad sem NumLock)
-    Mod+KP_Prior                        { focus-workspace 9; } // VAI ao workspace 9 (numpad sem NumLock)
+    Mod+KP_Next                        { focus-workspace 3; } // VAI ao workspace 3 (numpad sem NumLock)
+    Mod+KP_Left                        { focus-workspace 4; } // VAI ao workspace 4 (numpad sem NumLock)
+    Mod+KP_Begin                       { focus-workspace 5; } // VAI ao workspace 5 (numpad sem NumLock)
+    Mod+KP_Right                       { focus-workspace 6; } // VAI ao workspace 6 (numpad sem NumLock)
+    Mod+KP_Home                        { focus-workspace 7; } // VAI ao workspace 7 (numpad sem NumLock)
+    Mod+KP_Up                          { focus-workspace 8; } // VAI ao workspace 8 (numpad sem NumLock)
+    Mod+KP_Prior                       { focus-workspace 9; } // VAI ao workspace 9 (numpad sem NumLock)
 
     // MANDA a coluna focada para o workspace N (fileira superior).
     Mod+CTRL+1                          { move-column-to-workspace 1; } // MANDA a coluna ao workspace 1
@@ -197,7 +195,7 @@ binds {
     // ↑ Mesma função acima, pelo numpad com NumLock desligado.
     Mod+CTRL+KP_End                     { move-column-to-workspace 1; } // MANDA a coluna ao workspace 1 (numpad sem NumLock)
     Mod+CTRL+KP_Down                    { move-column-to-workspace 2; } // MANDA a coluna ao workspace 2 (numpad sem NumLock)
-    Mod+CTRL+KP_Next                    { move-column-to-workspace 3; } // MANDA a coluna ao workspace 3 (numpad sem NumLock)
+    Mod+CTRL+KP_Next                   { move-column-to-workspace 3; } // MANDA a coluna ao workspace 3 (numpad sem NumLock)
     Mod+CTRL+KP_Left                    { move-column-to-workspace 4; } // MANDA a coluna ao workspace 4 (numpad sem NumLock)
     Mod+CTRL+KP_Begin                   { move-column-to-workspace 5; } // MANDA a coluna ao workspace 5 (numpad sem NumLock)
     Mod+CTRL+KP_Right                   { move-column-to-workspace 6; } // MANDA a coluna ao workspace 6 (numpad sem NumLock)
@@ -216,7 +214,6 @@ binds {
     Mod+Equal                           { set-column-width "+10%"; } // ALARGA a coluna em 10% (= = mais)
     Mod+Shift+Minus                     { set-window-height "-10%"; } // ACHATA a janela em 10% de altura
     Mod+Shift+Equal                     { set-window-height "+10%"; } // ESTICA a janela em 10% de altura
-
 
     // ─── Modes ───
     // ↑ MODOS de exibição da janela/coluna.
@@ -239,8 +236,7 @@ binds {
     Mod+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; } // LIGA/DESLIGA o bloqueio de atalhos (este atalho nunca pode ser bloqueado)
 
     // ─── Exit / Power ───
-    // ↑ SAIR e energia.
-    Ctrl+Mod+Alt+Minus                 { spawn "systemctl" "reboot" "--force"; } // REINICIA o sistema à força
+  
     CTRL+ALT+Delete                     { quit; } // Also quits Niri
     // ↑ ENCERRA a sessão do niri (sai do ambiente)
     Mod+Shift+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
