@@ -1,0 +1,24 @@
+[
+  {
+    "appId": "md.obsidian.Obsidian",
+    "enabled": true,
+    "height": "",
+    "matchTitle": false,
+    "mode": "maximized_edges",
+    "output": "",
+    "title": "README - Notepad - Obsidian 1.15.0",
+    "width": "",
+    "workspace": ""
+  },
+  {
+    "appId": "superproductivity",
+    "enabled": true,
+    "height": "900",
+    "matchTitle": false,
+    "mode": "floating",
+    "output": "",
+    "title": "6m - almoçar",
+    "width": "800",
+    "workspace": ""
+  }
+]

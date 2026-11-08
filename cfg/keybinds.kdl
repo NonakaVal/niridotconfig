@@ -13,16 +13,16 @@ binds {
     Mod+Period                           { spawn-sh "noctalia msg panel-toggle liamwh/emoji-picker:compact"; }
     Mod+Alt+N                            { spawn-sh "noctalia msg panel-toggle noctalia/notes:panel"; }
     Alt+B                            { spawn-sh "noctalia msg panel-toggle dunarand/bookmarks:panel"; }
-    Alt+D                            { spawn-sh "noctalia msg panel-toggle val/vaultkit:panel"; } // ABRE/FECHA o painel do VaultKit
-    Alt+S                               { spawn-sh "noctalia msg panel-toggle val/mdsnip:panel"; } // ABRE/FECHA o painel do MDSnip
-    Alt+T                               { spawn-sh "noctalia msg panel-toggle nightwatch75/todo:panel"; }
+    Alt+S                            { spawn-sh "noctalia msg panel-toggle val/vaultkit:panel"; } // ABRE/FECHA o painel do VaultKit
+    
+    // Alt+T                               { spawn-sh "noctalia msg panel-toggle nightwatch75/todo:panel"; }
 
     Ctrl+Shift+ESCAPE hotkey-overlay-title="Mission Center" { spawn "flatpak" "run" "io.missioncenter.MissionCenter"; }
-    ALT+Space                            { spawn "walker"; }
+    
 
     // ─── Applications ───
     // ↑ Atalhos que ABREM programas.
-    Mod+Return                           hotkey-overlay-title="Open Terminal: Alacritty" { spawn "konsole"; } // ABRE o terminal Alacritty
+    Mod+Return                           hotkey-overlay-title="Open Terminal: Alacritty" { spawn "kitty"; } // ABRE o terminal Alacritty
     Mod+B                                hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; } // ABRE o navegador Firefox
     Mod+Alt+Semicolon                    hotkey-overlay-title="Edit Niri Config: code ~/.config/niri" { spawn "code" "/home/val/.config/niri"; }
     Mod+V                                hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
