@@ -13,6 +13,7 @@ binds {
     Mod+Period                           { spawn-sh "noctalia msg panel-toggle liamwh/emoji-picker:compact"; }
     Mod+Alt+N                            { spawn-sh "noctalia msg panel-toggle noctalia/notes:panel"; }
     Alt+B                            { spawn-sh "noctalia msg panel-toggle dunarand/bookmarks:panel"; }
+    Alt+O                            { spawn-sh "noctalia msg panel-toggle 0b10headedcalf/obsidian-vault-switcher:panel"; } // ABRE/FECHA os vaults do Obsidian
     Alt+S                            { spawn-sh "noctalia msg panel-toggle val/vaultkit:panel"; } // ABRE/FECHA o painel do VaultKit
     
     // Alt+T                               { spawn-sh "noctalia msg panel-toggle nightwatch75/todo:panel"; }
@@ -28,8 +29,8 @@ binds {
     Mod+V                                hotkey-overlay-title="Clipboard History: noctalia" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+S                                hotkey-overlay-title="VaultKit no terminal" { spawn-sh "vaultkit"; }
     Mod+Shift+S                          hotkey-overlay-title="vaultkit search" { spawn-sh "vaultkit search"; }
-    Ctrl+Space                           hotkey-overlay-title="Open Chrome App" { spawn "gtk-launch" "chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default"; }
-
+    Ctrl+Space                           hotkey-overlay-title="Open Chrome App" { spawn "gio" "launch" "/home/val/Área de trabalho/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop"; }
+    Ctrl+Shift+Space                           hotkey-overlay-title="Open Chrome App" { spawn "gio" "launch" "/home/val/Área de trabalho/chrome-pificchcdfpinjikejhcfjobjdhcedjj-Profile_1.desktop"; }
     // Please choose your own file manager.
     Mod+E                                hotkey-overlay-title="File Manager: Nautilus" { spawn "dolphin"; } // ABRE o gerenciador de arquivos Nautilus
     Ctrl+Mod+E                           hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; } // ABRE o gerenciador de arquivos Nautilus

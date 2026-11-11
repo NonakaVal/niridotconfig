@@ -12,17 +12,6 @@ window-rule {
 
 // Managed by Niri Rules Studio. Edit this rule in the plugin.
 window-rule {
-    match app-id="^superproductivity$"
-    open-floating true
-    open-fullscreen false
-    open-maximized false
-    open-maximized-to-edges false
-    default-column-width { fixed 800; }
-    default-window-height { fixed 600; }
-}
-
-// Managed by Niri Rules Studio. Edit this rule in the plugin.
-window-rule {
     match app-id="^org\\.kde\\.kdenlive$"
     open-floating false
     open-fullscreen false
